@@ -1,12 +1,15 @@
 import { Anchor } from "../ui/Anchor";
+import styles from "./header.style";
 
 const Header = () => {
   return (
-    <header>
-      <div>
-        <div></div>
+    <styles.header>
+      <styles.container>
+        <div>
+          <img width="180" src="logo.webp" alt="" />
+        </div>
         <nav>
-          <ul>
+          <styles.nav>
             <li>
               <Anchor activeClassName="active" href="/">
                 Home
@@ -27,10 +30,10 @@ const Header = () => {
                 Services
               </Anchor>
             </li>
-          </ul>
+          </styles.nav>
         </nav>
-      </div>
-    </header>
+      </styles.container>
+    </styles.header>
   );
 };
 
