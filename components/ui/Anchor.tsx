@@ -19,7 +19,7 @@ interface AnchorProps
 }
 
 export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
-  ({ newTab, ...props }: AnchorProps, ref) => {
+  ({ newTab, activeClassName ,...props }: AnchorProps, ref) => {
     const Rel = newTab ? "noopener noreferrer" : props.rel;
     const Target = newTab ? "_blank" : null;
 
@@ -32,7 +32,7 @@ export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
         ref={ref}
         {...props}
         className={`${props.className ?? ""} ${
-          active ? props.activeClassName : ""
+          active ? activeClassName : ""
         }`.trim()}
         rel={Rel}
         target={Target}
